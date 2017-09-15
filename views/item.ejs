@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <a href="/items/add">add item</a>
+    <table border="2">
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>BRAND</th>
+        <th>codeitem</th>
+      </tr>
+      <% dtItem.forEach(dataItem =>{ %>
+        <tr>
+          <td><%= dataItem.id %></td>
+          <td><%= dataItem.name %></td>
+          <td><%= dataItem.brand %></td>
+          <td><%= dataItem.codeitem %></td>
+        </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>
