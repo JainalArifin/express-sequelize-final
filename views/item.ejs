@@ -5,6 +5,8 @@
     <title></title>
   </head>
   <body>
+    <a href="/items">items</a>
+    <a href="/suppliers">suppliers</a><br><br>
     <a href="/items/add">add item</a>
     <table border="2">
       <tr>
@@ -12,6 +14,7 @@
         <th>NAME</th>
         <th>BRAND</th>
         <th>codeitem</th>
+        <th colspan="2">Action</th>
       </tr>
       <% dtItem.forEach(dataItem =>{ %>
         <tr>
@@ -19,6 +22,12 @@
           <td><%= dataItem.name %></td>
           <td><%= dataItem.brand %></td>
           <td><%= dataItem.codeitem %></td>
+          <td>
+            <a href="/items/edit/<%= dataItem.id %>">edit</a>
+          </td>
+          <td>
+            <a href="/items/delete/<%= dataItem.id %>">Delete</a>
+          </td>
         </tr>
       <% }) %>
     </table>

@@ -1,7 +1,12 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var Item = sequelize.define('Item', {
-    name: DataTypes.STRING,
+    name: {
+      type:  DataTypes.STRING,
+      validate:{
+        is:/(HP|SW|LP)\d+/,
+      }
+    },
     brand: DataTypes.STRING,
     codeitem: DataTypes.STRING
   }, {
