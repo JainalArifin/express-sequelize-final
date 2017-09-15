@@ -14,7 +14,7 @@ router.get('/', (req, res)=>{
 })
 
 router.get('/add', (req, res)=>{
-  res.render('addItems')
+  res.render('addItems', {errItems:''})
 })
 
 router.post('/add', (req, res)=>{
@@ -49,7 +49,7 @@ router.get('/edit/:id', (req, res)=>{
     }
   })
   .then((dataItem) => {
-    res.render('itemEdit', {dtItem:dataItem[0]})
+    res.render('itemEdit', {dtItem:dataItem[0],  errItems:''})
   })
 })
 
@@ -63,6 +63,10 @@ router.post('/edit/:id', (req, res)=>{
   })
   .then(() => {
     res.redirect('/items')
+  })
+
+  .catch((err) => {
+    res.send(err.message)
   })
 })
 

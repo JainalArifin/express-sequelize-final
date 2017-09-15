@@ -5,6 +5,9 @@
     <title></title>
   </head>
   <body>
+    <% if(errItems !== ''){ %>
+      <p style="color:red"><%= errItems %></p>
+    <% } %>
     <form class="" action="/items/edit/<%= dtItem.id %>" method="post">
       <input type="text" name="name" value="<%= dtItem.name %>">
       <input type="text" name="brand" value="<%= dtItem.brand %>">
